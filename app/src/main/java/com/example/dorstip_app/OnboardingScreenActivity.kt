@@ -44,8 +44,9 @@ class OnboardingScreenActivity : AppCompatActivity() {
         onboardingViewPager.adapter = OnboardingItemsAdapter
 
         val btnGetStarted = findViewById<Button>(R.id.btnGetStarted)
-        btnGetStarted.setOnClickListener(){
-            Intent
-        }
+        btnGetStarted.setOnClickListener {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
     }
 }
