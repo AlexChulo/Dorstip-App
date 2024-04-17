@@ -28,14 +28,14 @@ class SplashScreenActivity : AppCompatActivity() {
         tvSplashScreenTitle.animate().setDuration(1500).alpha(1f)
         tvSplashScreenSubtitle.animate().setDuration(1500).alpha(1f)
         tvSplashScreenDot.animate().setDuration(1500).alpha(1f).withEndAction {
-            // Delay for 2 seconds before starting MainActivity
+            // Delay for 1,5 seconds before starting MainActivity
             Handler().postDelayed({
-                val i = Intent(this, MainActivity::class.java)
+                val i = Intent(this, OnboardingScreenActivity::class.java)
                 startActivity(i)
                 //transition animation
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 finish()
-            }, 2000) // 2000 milliseconds = 2 seconds
+            }, 1500)
         }
     }
 }

@@ -13,11 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:paddingTop="300dp"
         android:fontFamily="@font/ebgaramond_bold"
-        android:text="Dorstip"
+        android:paddingTop="300dp"
         android:textColor="@color/background"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:text="@string/splash_title" />
 
 
     <TextView
@@ -30,21 +30,21 @@
         android:layout_marginTop="365dp"
         android:layout_toEndOf="@+id/tvSplashScreenSubtitle"
         android:fontFamily="@font/ebgaramond_bold"
-        android:text="•"
         android:textColor="@color/accent"
-        android:textSize="70sp" />
+        android:textSize="70sp"
+        android:text="@string/splash_dot" />
 
     <TextView
         android:id="@+id/tvSplashScreenSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvSplashScreenTitle"
+        android:layout_centerInParent="true"
         android:layout_marginTop="2dp"
-        android:text=" Bier"
-        android:textColor="@color/background"
-        android:textSize="50sp"
         android:fontFamily="@font/ebgaramond_bold"
-        android:layout_centerInParent="true"/>
+        android:text="@string/splash_subtitle"
+        android:textColor="@color/background"
+        android:textSize="50sp" />
 
 
 
