@@ -1,4 +1,4 @@
-package com.example.dorstip_app
+package com.example.dorstip_app.OnboardingScreen
 
 
 data class OnboardingItem(

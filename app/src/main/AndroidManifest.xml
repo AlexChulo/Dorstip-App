@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!-- Internet permission voor API -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,11 +17,11 @@
         android:theme="@style/Theme.DorstipApp"
         tools:targetApi="31">
         <activity
-            android:name=".OnboardingScreenActivity"
+            android:name=".OnboardingScreen.OnboardingScreenActivity"
             android:exported="false" />
         <!-- Set SplashScreenActivity as the launcher activity -->
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".SplashScreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

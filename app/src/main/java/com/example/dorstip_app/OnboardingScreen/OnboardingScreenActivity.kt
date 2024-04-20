@@ -1,11 +1,12 @@
-package com.example.dorstip_app
+package com.example.dorstip_app.OnboardingScreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import com.example.dorstip_app.MainActivity
+import com.example.dorstip_app.R
 
 class OnboardingScreenActivity : AppCompatActivity() {
 
@@ -22,19 +23,19 @@ class OnboardingScreenActivity : AppCompatActivity() {
         OnboardingItemsAdapter = OnboardingItemsAdapter(
             listOf(
                 OnboardingItem(
-                    onboardingImage = R.drawable.img,
+                    onboardingImage = R.drawable.onboard_image1,
                     onboardingTitle = "Kies uw favoriet drankje!",
                     onboardingDescription = "Vind uw favoriete drankje op elk gewenst moment vanaf uw\n" +
                             "bestaande locatie gemakkelijk"
                 ),
                 OnboardingItem(
-                    onboardingImage = R.drawable.img_1,
+                    onboardingImage = R.drawable.onboard_image2,
                     onboardingTitle = "Verfris uzelf met een drankje !",
                     onboardingDescription = "Of het nu een spelletjesavond is of een lange dag na kantoor\n" +
                             "wij zijn er altijd om u op te frissen"
                 ),
                 OnboardingItem(
-                    onboardingImage = R.drawable.img_2,
+                    onboardingImage = R.drawable.onboard_image3,
                     onboardingTitle = "Snelste levering ooit",
                     onboardingDescription = "Omdat gekoelde drankjes altijd beter zijn"
                 )

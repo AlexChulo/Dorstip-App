@@ -1,4 +1,4 @@
-package com.example.dorstip_app
+package com.example.dorstip_app.OnboardingScreen
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dorstip_app.R
 
 class OnboardingItemsAdapter(private val onboardingItem: List<OnboardingItem>) :
 RecyclerView.Adapter<OnboardingItemsAdapter.OnboardingItemViewHolder>() {
@@ -26,7 +27,6 @@ RecyclerView.Adapter<OnboardingItemsAdapter.OnboardingItemViewHolder>() {
     override fun getItemCount(): Int {
         return onboardingItem.size
     }
-
 //    Initializing with the onboarding_item_container.xml
     inner class OnboardingItemViewHolder(view: View): RecyclerView.ViewHolder(view){
         private val ivOnboarding = view.findViewById<ImageView>(R.id.ivOnboard)

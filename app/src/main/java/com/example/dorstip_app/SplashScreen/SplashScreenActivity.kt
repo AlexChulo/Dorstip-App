@@ -1,15 +1,12 @@
-package com.example.dorstip_app
+package com.example.dorstip_app.SplashScreen
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
-import android.text.style.SubscriptSpan
 import android.widget.TextView
+import com.example.dorstip_app.OnboardingScreen.OnboardingScreenActivity
+import com.example.dorstip_app.R
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
