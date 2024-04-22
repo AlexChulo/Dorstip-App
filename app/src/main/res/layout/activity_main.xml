@@ -30,7 +30,7 @@
                     android:layout_marginTop="20dp">
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/ivLocation"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
                         app:srcCompat="@drawable/ic_location" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/tvDeliverTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ebgaramond_regular"
@@ -46,11 +46,11 @@
                         android:text="@string/deliver_to"
                         android:textAllCaps="true"
                         android:textSize="15sp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView2"
-                        app:layout_constraintStart_toEndOf="@+id/imageView" />
+                        app:layout_constraintBottom_toTopOf="@+id/tvDeliverPlace"
+                        app:layout_constraintStart_toEndOf="@+id/ivLocation" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/tvDeliverPlace"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ebgaramond_bold"
@@ -58,7 +58,7 @@
                         android:text="Placeholder"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageView" />
+                        app:layout_constraintStart_toEndOf="@+id/ivLocation" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,13 +67,12 @@
                     android:paddingVertical="20dp">
 
                     <EditText
-                        android:id="@+id/editText"
+                        android:id="@+id/etSearchBar"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginHorizontal="20dp"
                         android:background="@drawable/search_background"
                         android:elevation="10dp"
-                        android:ems="10"
                         android:hint="@string/search_for_drink"
                         android:inputType="text"
                         android:padding="10dp"
@@ -102,7 +101,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tvHeader1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
@@ -128,11 +127,13 @@
                         android:paddingVertical="10dp">
 
                         <ImageView
+                            android:id="@+id/ivCategory1"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             app:srcCompat="@drawable/cabernet_sauvignon" />
 
                         <TextView
+                            android:id="@+id/tvCategory1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="aap"
@@ -153,11 +154,13 @@
                         android:paddingVertical="10dp">
 
                         <ImageView
+                            android:id="@+id/ivCategory2"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             app:srcCompat="@drawable/cabernet_sauvignon" />
 
                         <TextView
+                            android:id="@+id/tvCategory2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="aap"
@@ -178,11 +181,13 @@
                         android:paddingVertical="10dp">
 
                         <ImageView
+                            android:id="@+id/ivCategory3"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             app:srcCompat="@drawable/cabernet_sauvignon" />
 
                         <TextView
+                            android:id="@+id/tvCategory3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="aap"
@@ -201,7 +206,7 @@
                 android:paddingVertical="10dp">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tvHeader2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -210,7 +215,7 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnDrinks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -219,6 +224,7 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDrinks"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
@@ -227,19 +233,103 @@
         </LinearLayout>
     </ScrollView>
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="30dp"
-        />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/menu_background"
+        android:elevation="24dp">
 
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/navBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="30dp"
+            app:backgroundTint="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/home"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_home" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recipe"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_recipe" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fabQrScanner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_qr"
+                        app:backgroundTint="@color/primary"
+                        app:tint="@color/secondary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_cart" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/cart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_profile" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
