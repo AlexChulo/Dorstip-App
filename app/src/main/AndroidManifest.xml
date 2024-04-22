@@ -16,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DorstipApp"
         tools:targetApi="31">
+        <activity android:name=".LoginScreen.LoginScreen"
+            android:exported="false"/>
         <activity
             android:name=".OnboardingScreen.OnboardingScreenActivity"
             android:exported="false" />
@@ -25,7 +27,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,7 +35,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
