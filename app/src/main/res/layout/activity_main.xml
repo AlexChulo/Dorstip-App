@@ -4,15 +4,332 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".dashboard.MainActivity"
+    android:background="@color/white"
+ >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivLocation"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_location" />
+
+                    <TextView
+                        android:id="@+id/tvDeliverTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ebgaramond_regular"
+                        android:paddingLeft="10dp"
+                        android:text="@string/deliver_to"
+                        android:textAllCaps="true"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tvDeliverPlace"
+                        app:layout_constraintStart_toEndOf="@+id/ivLocation" />
+
+                    <TextView
+                        android:id="@+id/tvDeliverPlace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ebgaramond_bold"
+                        android:paddingLeft="10dp"
+                        android:text="Placeholder"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivLocation" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="20dp">
+
+                    <EditText
+                        android:id="@+id/etSearchBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/search_background"
+                        android:elevation="10dp"
+                        android:hint="@string/search_for_drink"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:textColor="@color/grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivDeals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/header_image"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvHeader1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/ebgaramond_bold"
+                    android:paddingVertical="10dp"
+                    android:text="Explore Categories"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="15dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="02"
+                        android:background="@drawable/category_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingVertical="10dp">
+
+                        <ImageView
+                            android:id="@+id/ivCategory1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/cabernet_sauvignon" />
+
+                        <TextView
+                            android:id="@+id/tvCategory1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aap"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="02"
+                        android:background="@drawable/category_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+
+                        android:paddingVertical="10dp">
+
+                        <ImageView
+                            android:id="@+id/ivCategory2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/cabernet_sauvignon" />
+
+                        <TextView
+                            android:id="@+id/tvCategory2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aap"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="02"
+                        android:background="@drawable/category_background"
+
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingVertical="10dp">
+
+                        <ImageView
+                            android:id="@+id/ivCategory3"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/cabernet_sauvignon" />
+
+                        <TextView
+                            android:id="@+id/tvCategory3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aap"
+
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:id="@+id/tvHeader2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ebgaramond_bold"
+                    android:text="Popular drinks"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnDrinks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/accent"
+                    android:text="Show All" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDrinks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingHorizontal="20dp"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/menu_background"
+        android:elevation="24dp">
 
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/navBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="30dp"
+            app:backgroundTint="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/home"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_home" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recipe"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_recipe" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fabQrScanner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_qr"
+                        app:backgroundTint="@color/primary"
+                        app:tint="@color/secondary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_cart" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/cart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_profile" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

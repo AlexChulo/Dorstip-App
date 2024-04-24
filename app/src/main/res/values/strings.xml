@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Dorstip-App</string>
+    <string name="splash_title">Dorstip</string>
+    <string name="splash_subtitle">Bier</string>
+    <string name="splash_dot">•</string>
+    <string name="get_started">Get Started</string>
+    <string name="deliver_to">Deliver to</string>
+    <string name="search_for_drink">🔍 Search for drink</string>
 </resources>
