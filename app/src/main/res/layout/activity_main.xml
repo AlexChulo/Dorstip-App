@@ -29,42 +29,31 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="20dp">
 
-                    <ImageView
-                        android:id="@+id/ivLocation"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_location" />
-
                     <TextView
                         android:id="@+id/tvDeliverTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ebgaramond_regular"
-                        android:paddingLeft="10dp"
-                        android:text="@string/deliver_to"
+                        android:text="@string/welcome_back"
                         android:textAllCaps="true"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toTopOf="@+id/tvDeliverPlace"
-                        app:layout_constraintStart_toEndOf="@+id/ivLocation" />
+                        app:layout_constraintStart_toStartOf="@+id/tvDeliverPlace" />
 
                     <TextView
                         android:id="@+id/tvDeliverPlace"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ebgaramond_bold"
-                        android:paddingLeft="10dp"
-                        android:text="Placeholder"
+                        android:text="babatunde"
                         android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/ivLocation" />
+                        app:layout_constraintBottom_toBottomOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingVertical="20dp">
+                    android:paddingVertical="10dp">
 
                     <EditText
                         android:id="@+id/etSearchBar"
@@ -84,20 +73,37 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginHorizontal="20dp">
+                    android:layout_height="180dp"
+                    >
 
-                    <ImageView
-                        android:id="@+id/ivDeals"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:background="@drawable/header_image"
-                        android:contentDescription="@string/app_name"
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/vpBanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginHorizontal="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent" >
+                    </androidx.viewpager2.widget.ViewPager2>
+
+                    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                        android:id="@+id/diBanner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:dotsColor="@color/grey"
+                        app:dotsSize="10dp"
+                        app:dotsSpacing="3dp"
+                        app:dotsWidthFactor="2.5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:selectedDotColor="@color/accent"
+                        tools:visibility="visible" />
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
@@ -116,85 +122,11 @@
                     android:layout_marginHorizontal="15dp"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategory"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="02"
-                        android:background="@drawable/category_background"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:paddingVertical="10dp">
-
-                        <ImageView
-                            android:id="@+id/ivCategory1"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            app:srcCompat="@drawable/cabernet_sauvignon" />
-
-                        <TextView
-                            android:id="@+id/tvCategory1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="aap"
-
-                            />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="02"
-                        android:background="@drawable/category_background"
-                        android:gravity="center"
-                        android:orientation="vertical"
-
-                        android:paddingVertical="10dp">
-
-                        <ImageView
-                            android:id="@+id/ivCategory2"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            app:srcCompat="@drawable/cabernet_sauvignon" />
-
-                        <TextView
-                            android:id="@+id/tvCategory2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="aap"
-
-                            />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_weight="02"
-                        android:background="@drawable/category_background"
-
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:paddingVertical="10dp">
-
-                        <ImageView
-                            android:id="@+id/ivCategory3"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            app:srcCompat="@drawable/cabernet_sauvignon" />
-
-                        <TextView
-                            android:id="@+id/tvCategory3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="aap"
-
-                            />
-
-                    </LinearLayout>
+                        android:clipToPadding="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -211,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/ebgaramond_bold"
-                    android:text="Popular drinks"
+                    android:text="@string/recommendation"
                     android:textSize="20sp" />
 
                 <Button
@@ -220,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@color/accent"
-                    android:text="Show All" />
+                    android:text="@string/show_all_drinks" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -247,7 +179,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="30dp"
-            app:backgroundTint="@color/white">
+            app:backgroundTint="@color/white"
+            android:layout_gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -256,10 +189,11 @@
 
                 <LinearLayout
                     android:id="@+id/home"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -270,10 +204,11 @@
 
                 <LinearLayout
                     android:id="@+id/recipe"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
                     <ImageView
 
@@ -284,7 +219,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
@@ -294,6 +229,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:contentDescription="QrScanner"
                         android:src="@drawable/ic_qr"
                         app:backgroundTint="@color/primary"
                         app:tint="@color/secondary" />
@@ -301,10 +237,11 @@
 
                 <LinearLayout
                     android:id="@+id/cart"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
                     <ImageView
 
@@ -316,10 +253,11 @@
 
                 <LinearLayout
                     android:id="@id/cart"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
                     <ImageView
 
