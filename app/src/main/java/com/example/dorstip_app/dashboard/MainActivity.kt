@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.dorstip_app.dashboard.BannerSlider.SliderAdapter
 import com.example.dorstip_app.dashboard.BannerSlider.SliderModel
+import com.example.dorstip_app.dashboard.Categories.CategoryAdapter
 import com.example.dorstip_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +23,8 @@ class MainActivity : AppCompatActivity() {
                 binding= ActivityMainBinding.inflate(layoutInflater)
                 setContentView(binding.root)
 
-            initBanner()
+                initBanner()
+                initCategory()
             }
 
             private fun initBanner() {
@@ -46,6 +49,14 @@ class MainActivity : AppCompatActivity() {
                     binding.diBanner.visibility= View.VISIBLE
                     binding.diBanner.attachTo(binding.vpBanner)
                 }
+            }
+
+            private fun initCategory(){
+                viewModel.categories.observe(this, Observer {
+                    binding.rvCategory.layoutManager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
+                    binding.rvCategory.adapter=CategoryAdapter(it)
+                })
+                viewModel.loadCategory()
             }
         }
 

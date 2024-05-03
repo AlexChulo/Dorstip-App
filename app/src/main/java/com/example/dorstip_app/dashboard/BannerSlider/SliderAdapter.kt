@@ -44,7 +44,7 @@ class SliderAdapter(
 
 
     class SliderViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
-    private val imageView:ImageView=itemView.findViewById(R.id.imageSlide)
+    private val imageView:ImageView=itemView.findViewById(R.id.ivSlide)
 
         fun setImage(sliderItems: SliderModel, context: Context){
             val requestOption=RequestOptions().transform(CenterInside())
