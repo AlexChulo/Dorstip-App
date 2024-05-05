@@ -24,25 +24,19 @@
             android:exported="false" />
         <activity
             android:name=".OnboardingScreen.OnboardingScreenActivity"
-            android:exported="false" /> <!-- Set SplashScreenActivity as the launcher activity -->
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.MainActivity"
+            android:exported="true"/>
         <activity
             android:name=".SplashScreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.MAIN" /><!-- Set SplashScreenActivity as the launcher activity -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".dashboard.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
