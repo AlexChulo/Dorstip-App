@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,17 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DorstipApp"
         tools:targetApi="31">
-
-<!--        adding activity-->
+        <activity
+            android:name=".dashboard.DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginScreen.LoginScreen"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".OnboardingScreen.OnboardingScreenActivity"
-            android:exported="false" />
-
-        <!-- Set SplashScreenActivity as the launcher activity -->
+            android:exported="false" /> <!-- Set SplashScreenActivity as the launcher activity -->
         <activity
             android:name=".SplashScreen.SplashScreenActivity"
             android:exported="true">
